@@ -13,6 +13,7 @@ jest.mock("axios", () => ({
                       {Title:"Harry Potter 1", imdbID:"1091", Type:"Movie",Poster:"url1", Year:"2001"},
                       {Title:"Harry Potter 2", imdbID:"1092", Type:"Movie",Poster:"url2", Year:"2002"},
                       {Title:"Harry Potter 3", imdbID:"1093", Type:"Movie",Poster:"url3", Year:"2003"},
+                      {Title:"Harry Potter 3", imdbID:"1093", Type:"Movie",Poster:"url3", Year:"2003"},
                   ]
               }
           })
@@ -28,7 +29,7 @@ test("Should get mock data", async() => {
   let movies: IMovie[] = await getData(searchText);
   
   //ASSERT
-  expect(movies.length).toBe(3);
+  expect(movies.length).toBe(4);
   expect(movies[0].Year).toBe("2001");
   expect(movies[0].Title).toBe("Harry Potter 1");
 });
